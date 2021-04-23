@@ -1,0 +1,11 @@
+.Launch {
+    background-image: url('../images/launch_taps.jpg');
+    background-position: -850px -100px;
+    background-repeat: no-repeat;
+}
+
+@media(min-width: 768px) {
+    .Launch {
+        background-position: -700px -100px;
+    }
+}

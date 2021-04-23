@@ -1,0 +1,11 @@
+.Drinks {
+    background-image: url('../images/drinks_background.jpg');
+    background-repeat: no-repeat;
+    background-position: -540px -120px;
+}
+
+@media(min-width: 768px) {
+    .Drinks {
+        background-position: -200px -150px;
+    }
+}

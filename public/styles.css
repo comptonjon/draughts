@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lexend Mega', sans-serif;
+};
+
+body, html {
+    height: 100vh;
+    min-width: 400px;
+    background-color: black;
+}
+
+#root {
+    height: 100vh;
+    background-color: green;
+}

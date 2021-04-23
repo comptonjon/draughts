@@ -1,0 +1,29 @@
+.Navbar {
+    background-color: black;
+    height: 80px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    background-color: rgb(148, 11, 11);
+}
+
+.Navbar-brand p {
+    font-size: 1.2rem;
+}
+
+.Navbar-menu {
+    display: flex;
+    list-style: none;
+}
+
+.Navbar-link {
+    margin: 0 12px;
+    text-transform: uppercase;
+}
+
+.Navbar a {
+    color: white;
+    text-decoration: none;
+}

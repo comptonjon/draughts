@@ -1,3 +1,5 @@
 .Places {
     background-image: url('../images/places_background.jpg');
+    background-size: cover;
+
 }

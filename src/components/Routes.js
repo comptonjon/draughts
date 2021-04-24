@@ -2,6 +2,8 @@ import { Route, Switch } from 'react-router-dom';
 import Launch from './Launch';
 import Drinks from './Drinks';
 import Places from './Places';
+import Place from './Place';
+import Users from './Users'
 
 const Routes = () => {
     return (
@@ -11,6 +13,12 @@ const Routes = () => {
             </Route>
             <Route exact path="/places">
                 <Places />
+            </Route>
+            <Route exact path="/places/:id">
+                <Place />
+            </Route>
+            <Route exact path="/users">
+                <Users />
             </Route>
             <Route exact path="/">
                 <Launch/>

@@ -19,7 +19,7 @@ const Drinks = () => {
             <List>
                 {drinks && Object.values(drinks).map(d => {
                     return (
-                        <ListCell>
+                        <ListCell key={d.id}>
                             <h3>{d.name}</h3>
                             <p>{`${d.maker} ${d.abv}% ABV`}</p>
                         </ListCell>

@@ -3,6 +3,7 @@
     color: white;
     padding: 24px;
     margin-bottom: 12px;
+    width: 100%;
 }
 
 .ListCell:hover {

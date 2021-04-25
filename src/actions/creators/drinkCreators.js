@@ -26,7 +26,7 @@ export const getDrink = (id) => {
             const res = await axios.get(`${WAT_API_URI}${DRINK_ENDPOINT}${id}`);
             dispatch(gotDrink(res.data.drink));
         } catch(e) {
-            dispatch({type: DRINK_API_ERROR, error: e.response})
+            dispatch({type: DRINK_API_ERROR, error: e.response.data.error.message})
         }
     }
 }

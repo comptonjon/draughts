@@ -6,12 +6,18 @@ import ListCell from './ListCell';
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getDrinks } from '../actions/creators/drinkCreators';
+import Spinner from './Spinner';
 
 const Drinks = () => {
     const dispatch = useDispatch();
-    const drinks = useSelector(st => st.drinkState.drinks);
+    const drinkState = useSelector(st => st.drinkState);
+    const drinks = drinkState.drinks;
+    const [loading, setLoading] = useState(true);
     useEffect(() => {
-        dispatch(getDrinks());
+        if (!drinks.length) {
+            dispatch(getDrinks());
+        }
+        setLoading(loading => false);
     }, []);
     return (
         <Page name="Drinks">

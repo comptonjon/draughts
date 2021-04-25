@@ -30,9 +30,9 @@ const OwnerDraughtList = ({id}) => {
                     :
                     <>
                     <h2>Active Draughts</h2>
-                    {draughtList.draughts.map(d => d.active && <OwnerDraughtCell id={d.id} />)}
+                    {draughtList.draughts.map(d => d.active && <OwnerDraughtCell id={d.id} active={d.active} pid={id}/>)}
                     <h2>Inactive Draughts</h2>
-                    {draughtList.draughts.map(d => !d.active && <OwnerDraughtCell id={d.id} />)}
+                    {draughtList.draughts.map(d => !d.active && <OwnerDraughtCell id={d.id} active={d.active} pid={id}/>)}
                     </>
             }
         </List>

@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { getDrink } from '../actions/creators/drinkCreators';
 import Spinner from './Spinner';
+import CellSection from './CellSection';
 
 const DrinkDraughtCell = ({drink:id}) => {
     const dispatch = useDispatch();
@@ -25,8 +26,10 @@ const DrinkDraughtCell = ({drink:id}) => {
                 <Spinner/>              :
                 drinkState.error ? <h1>ERROR</h1> :
                 <>
-                <h3>{drink.name}</h3>
-                <p>{`${drink.maker} ${drink.abv}% ABV`}</p>
+                <CellSection>
+                    <h3>{drink.name}</h3>
+                    <p>{`${drink.maker} ${drink.abv}% ABV`}</p>
+                </CellSection>
                 </>
             }
         </ListCell>

@@ -22,7 +22,7 @@ export const getPlaceDraughts = (id) => {
             const res = await axios.get(`${WAT_API_URI}${PLACE_ENDPOINT}${id}/${DRAUGHTS_ENDPOINT}`)
             dispatch(gotPlaceDraughts(res.data.draughts));
         } catch(e) {
-            dispatch({type: DRAUGHT_API_ERROR, error: e.response.status})
+            dispatch({type: DRAUGHT_API_ERROR, error: "ERROR"})
         }
     }
 };
@@ -50,4 +50,18 @@ export function getDrinkDraughts(id) {
 
 function gotDrinkDraughts(draughts) {
     return { type: DRAUGHT_API_DRINK_SUCCESS, draughts}
+}
+
+export const editPlaceDraught = (pid, did, active) => {
+    return async function(dispatch) {
+        try {
+            //dispatch({type: DRAUGHT_API_REQUEST});
+            alert(`${WAT_API_URI}${DRINK_ENDPOINT}${pid}/${DRAUGHTS_ENDPOINT}${did}?active=${active}`)
+            const res = await axios.patch(`${WAT_API_URI}${PLACE_ENDPOINT}${pid}/${DRAUGHTS_ENDPOINT}${did}?active=${active}`);
+            console.log(res);
+        } catch(e) {
+            alert('error');
+        }
+    }
+    
 }

@@ -9,13 +9,14 @@ import { useParams } from "react-router-dom";
 
 
 const ManagePlace = () => {
+    const dispatch = useDispatch();
     const { id } = useParams();
     const placeState = useSelector(st => st.placeState);
     const place = placeState.places[id];
     const [loading, setLoading] = useState(true);
-    useEffect(() => {
+    useEffect(() => { 
         if (!place) {
-            getPlace(id);
+            dispatch(getPlace(id));
         }
         setLoading(loading => false);
     }, []);
@@ -26,7 +27,10 @@ const ManagePlace = () => {
                     <Spinner />                    :
                 placeState.error  ?
                     <h1>ERROR</h1>:
-                <OwnerDraughtList id={id}/>
+                <>
+                    <h1>{place.name}</h1>
+                    <OwnerDraughtList id={id}/>
+                </>
             }
         </Page>
     )

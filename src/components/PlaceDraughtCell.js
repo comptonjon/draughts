@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
 import ListCell from './ListCell';
 import { getPlace } from '../actions/creators/placeCreators';
+import CellSection from './CellSection';
 
 const PlaceDraughtCell = ({id}) => {
     const dispatch = useDispatch();
@@ -23,8 +24,10 @@ const PlaceDraughtCell = ({id}) => {
                     placeState.error   ?
                         <h1>Error</h1> :
                     <>
-                        <h3>{place.name}</h3>
-                        <p>{`${place.address} ${place.city}, ${place.state} ${place.zip}`}</p>
+                        <CellSection>
+                            <h3>{place.name}</h3>
+                            <p>{`${place.address} ${place.city}, ${place.state} ${place.zip}`}</p>
+                        </CellSection>
                     </>
             }
         </ListCell>

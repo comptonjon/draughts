@@ -1,6 +1,6 @@
 import './DrinkDraughtList.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react';
 import { getDrinkDraughts } from '../actions/creators/draughtCreators'
 import List from './List';

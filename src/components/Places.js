@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getPlaces } from '../actions/creators/placeCreators';
+import CellSection from './CellSection';
 
 const Places = () => {
     const dispatch = useDispatch();
@@ -24,8 +25,10 @@ const Places = () => {
                     return (
                         <Link key={p.id} to={`/places/${p.id}`}>
                             <ListCell>
-                                <h3>{p.name}</h3>
-                                <p>{`${p.address} ${p.city}, ${p.state} ${p.zip}`}</p>
+                                <CellSection>
+                                    <h3>{p.name}</h3>
+                                    <p>{`${p.address} ${p.city}, ${p.state} ${p.zip}`}</p>
+                                </CellSection>
                             </ListCell>
                         </Link>
                     )

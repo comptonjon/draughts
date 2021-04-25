@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { getPlaceDraughts } from '../actions/creators/draughtCreators';
 import DrinkDraughtCell from './DrinkDraughtCell';
 
-const PlaceDraughtList = ({place:id}) => {
+const PlaceDraughtList = ({place:id, full=false}) => {
     const dispatch = useDispatch();
     const draughtsState = useSelector(st => st.draughtsState);
     const place = draughtsState.places[id];

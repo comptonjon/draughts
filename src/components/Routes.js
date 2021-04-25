@@ -6,6 +6,7 @@ import Places from './Places';
 import Place from './Place';
 import Users from './Users'
 import Dashboard from './Dashboard';
+import ManagePlace from './ManagePlace';
 
 const Routes = () => {
     return (
@@ -21,6 +22,9 @@ const Routes = () => {
             </Route>
             <Route exact path="/places/:id">
                 <Place />
+            </Route>
+            <Route exact path="/places/:id/manage">
+                <ManagePlace />
             </Route>
             <Route exact path="/users">
                 <Users />

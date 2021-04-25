@@ -12,11 +12,7 @@ import CellSection from './CellSection';
 const Places = () => {
     const dispatch = useDispatch();
     const places = useSelector(st => st.placeState.places);
-    
-    useEffect(() => {
-        dispatch(getPlaces());
-    }, []);
-    
+
     return (
         <Page name="Places">
             <PageTitle title="Places."/>

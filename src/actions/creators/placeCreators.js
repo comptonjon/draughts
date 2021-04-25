@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { PLACE_API_ERROR, PLACE_API_SUCCESS, PLACE_API_REQUEST } from '../types/placeTypes';
+import { PLACE_API_ERROR, PLACE_API_SUCCESS, PLACE_API_REQUEST, PLACE_API_INITIAL_LOAD_SUCCESS } from '../types/placeTypes';
 import { PLACE_ENDPOINT, WAT_API_URI  } from '../../constants';
 import { arrayToObjectById } from '../../helpers';
 
@@ -16,7 +16,7 @@ export const getPlaces = () => {
 };
 
 function gotPlaces(places) {
-    return { type: PLACE_API_SUCCESS, payload: arrayToObjectById(places) };
+    return { type: PLACE_API_INITIAL_LOAD_SUCCESS, payload: arrayToObjectById(places) };
 };
 
 export const getPlace = (id) => {

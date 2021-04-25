@@ -1,6 +1,16 @@
 import axios from 'axios';
-import { DRINK_API_ERROR, DRINK_API_SUCCESS, DRINK_API_REQUEST } from '../types/drinkTypes';
-import { DRINK_ENDPOINT, WAT_API_URI } from '../../constants';
+import { 
+    DRINK_API_ERROR, 
+    DRINK_API_SUCCESS, 
+    DRINK_API_REQUEST,
+    DRINK_API_INITAL_LOAD_SUCCESS
+ } from '../types/drinkTypes';
+
+ import { 
+    DRINK_ENDPOINT, 
+    WAT_API_URI 
+} from '../../constants';
+
 import { arrayToObjectById } from '../../helpers';
 
 export const getDrinks = () => {
@@ -16,7 +26,7 @@ export const getDrinks = () => {
 }
 
 function gotDrinks(drinks) {
-    return { type: DRINK_API_SUCCESS, payload: arrayToObjectById(drinks) };
+    return { type: DRINK_API_INITAL_LOAD_SUCCESS, payload: arrayToObjectById(drinks) };
 }
 
 export const getDrink = (id) => {

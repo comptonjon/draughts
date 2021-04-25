@@ -7,6 +7,7 @@ import Place from './Place';
 import Users from './Users'
 import Dashboard from './Dashboard';
 import ManagePlace from './ManagePlace';
+import AddDraught from './AddDraught';
 
 const Routes = () => {
     return (
@@ -30,7 +31,7 @@ const Routes = () => {
                 <Users />
             </Route>
             <Route exact path="/dashboard">
-                <Dashboard />
+                <AddDraught />
             </Route>
             <Route exact path="/">
                 <Launch/>

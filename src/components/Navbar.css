@@ -10,11 +10,11 @@
 }
 
 .Navbar-brand p {
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 .Navbar-menu {
-    display: flex;
+    display: none;
     list-style: none;
 }
 
@@ -26,4 +26,14 @@
 .Navbar a {
     color: white;
     text-decoration: none;
+}
+
+@media(min-width: 768px) {
+    .Navbar-menu {
+        display: flex;
+    }
+
+    .Navbar-brand p {
+        font-size: 1.2rem;
+    }
 }

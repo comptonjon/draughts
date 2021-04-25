@@ -1,0 +1,12 @@
+.DashSection {
+    background-color: rgb(233, 233, 233);
+    color: rgb(24, 23, 23);
+    padding: 12px;
+    border: 1px solid darkslategray;
+    margin-bottom: 24px;
+}
+
+.DashSection h2 {
+    margin-bottom: 12px;
+}
+

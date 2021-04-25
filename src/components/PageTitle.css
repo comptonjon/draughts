@@ -10,5 +10,11 @@
 .PageTitle h1 {
     text-transform: uppercase;
     text-align: center;
-    font-size: 3.4rem;
+    font-size: 1.4rem;
+}
+
+@media(min-width: 768px) {
+    .PageTitle h1 {
+        font-size: 3.4rem;
+    }
 }

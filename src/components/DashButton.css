@@ -1,0 +1,22 @@
+.DashButton {
+    
+    
+    text-align: center;
+}
+
+.DashButton button {
+    background-color: black;
+    color: white;
+    border: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.8rem;
+    padding: 8px;
+    width: 150px;
+    border-radius: 4px;
+}
+
+.DashButton button:active {
+    color: black;
+    background-color: white;
+}
+

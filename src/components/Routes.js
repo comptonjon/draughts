@@ -5,6 +5,7 @@ import Drink from './Drink';
 import Places from './Places';
 import Place from './Place';
 import Users from './Users'
+import Dashboard from './Dashboard';
 
 const Routes = () => {
     return (
@@ -23,6 +24,9 @@ const Routes = () => {
             </Route>
             <Route exact path="/users">
                 <Users />
+            </Route>
+            <Route exact path="/dashboard">
+                <Dashboard />
             </Route>
             <Route exact path="/">
                 <Launch/>

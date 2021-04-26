@@ -1,0 +1,31 @@
+.Auth {
+    background-color: grey;
+    text-align: center;
+}
+
+.Auth-form {
+    width: 100%;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    margin-top: 24px;
+}
+
+.Auth-form input {
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 4px;
+    height: 35px;
+}
+
+.Auth button {
+    text-align: center;
+    padding: 8px;
+    
+}
+
+.Auth-form button {
+    width: 100%;
+    max-width: 450px;
+}

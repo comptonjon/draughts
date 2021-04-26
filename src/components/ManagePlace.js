@@ -19,7 +19,7 @@ const ManagePlace = () => {
             dispatch(getPlace(id));
         }
         setLoading(loading => false);
-    }, []);
+    }, [dispatch, place, id]);
     return (
         <Page name="ManagePlace">
             {

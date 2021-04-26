@@ -4,13 +4,10 @@ import PageTitle from './PageTitle';
 import List from './List';
 import ListCell from './ListCell';
 import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { getPlaces } from '../actions/creators/placeCreators';
+import { useSelector } from 'react-redux';
 import CellSection from './CellSection';
 
 const Places = () => {
-    const dispatch = useDispatch();
     const places = useSelector(st => st.placeState.places);
 
     return (

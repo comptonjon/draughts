@@ -15,7 +15,7 @@ const PlaceDraughtList = ({place:id, full=false}) => {
             dispatch(getPlaceDraughts(id));
         }
         setLoading(false);
-    }, []);
+    }, [dispatch, id, place]);
     if (loading || draughtsState.requests ) {
         return <h1>Loading...</h1>
     }

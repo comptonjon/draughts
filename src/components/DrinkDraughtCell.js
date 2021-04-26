@@ -15,7 +15,7 @@ const DrinkDraughtCell = ({drink:id}) => {
             dispatch(getDrink(id));
         }
         setLoading(loading => false);
-    }, []);
+    }, [dispatch, drink, id]);
     // if ( loading || drinkState.requests ) {
     //     return <h1>LOADING</h1>
     // }

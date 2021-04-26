@@ -14,7 +14,7 @@ const OwnerDraughtCell = ({id, pid, active}) => {
             dispatch(getDrink(id));
         }
         setLoading(loading => false);
-    }, [])
+    }, [dispatch, drink, id])
 
     const handleStatusChange = () => {
         dispatch(editPlaceDraught(pid, id, !active))

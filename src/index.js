@@ -8,8 +8,22 @@ import { applyMiddleware, compose, createStore } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers/rootReducer';
+import { writeToLocalStorage, getLaunchSessionState } from './helpers';
+import {WAT_SESSION_STATE} from './constants';
 
-const store = createStore(rootReducer, compose(applyMiddleware(thunk), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()))
+console.log(getLaunchSessionState());
+
+const store = createStore(
+  rootReducer, 
+  {sessionState: getLaunchSessionState(WAT_SESSION_STATE)}, 
+  compose(
+    applyMiddleware(thunk), 
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+));
+
+store.subscribe(() => {
+  writeToLocalStorage(WAT_SESSION_STATE, store.getState().sessionState);
+})
 
 ReactDOM.render(
   <React.StrictMode>

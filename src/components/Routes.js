@@ -8,10 +8,18 @@ import Users from './Users'
 import Dashboard from './Dashboard';
 import ManagePlace from './ManagePlace';
 import AddDraught from './AddDraught';
+import Auth from './Auth';
+import Logout from './Logout';
+import AuthRoute from './AuthRoute';
+import Wrapper from './Wrapper';
 
 const Routes = () => {
     return (
         <Switch>
+            <Route path="/auth">
+                <Auth />
+            </Route>
+            <Wrapper>
             <Route exact path="/drinks">
                 <Drinks />
             </Route>
@@ -33,6 +41,12 @@ const Routes = () => {
             <Route exact path="/dashboard">
                 <AddDraught />
             </Route>
+            <Route exact path="/logout">
+                <AuthRoute>
+                    <Logout />
+                </AuthRoute>
+            </Route>
+            </Wrapper>
             <Route exact path="/">
                 <Launch/>
             </Route>

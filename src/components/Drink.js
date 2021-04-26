@@ -2,7 +2,7 @@ import './Drink.css';
 import Page from './Page';
 import PageTitle from './PageTitle';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Spinner from './Spinner';
 import { getDrink } from '../actions/creators/drinkCreators';
@@ -19,7 +19,7 @@ const Drink = () => {
             dispatch(getDrink(id));
         }
         setLoading(false);
-    }, []);
+    }, [dispatch, drink, id]);
     return (
         <Page name="Drink">
             {(loading || drinkState.requests ) ? 

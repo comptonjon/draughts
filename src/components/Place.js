@@ -2,7 +2,7 @@ import './Place.css';
 import Page from './Page';
 import PageTitle from './PageTitle';
 import Spinner from './Spinner';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getPlace } from '../actions/creators/placeCreators';
@@ -21,7 +21,7 @@ const Place = () => {
             dispatch(getPlace(id))
         };
         setLoading(loading => false);
-    }, []);
+    }, [dispatch, id, place]);
     // if(loading || placeState.requests) {
     //     return <h1>LOADING.....</h1>
     // }

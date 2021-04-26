@@ -1,7 +1,7 @@
 import ModalPage from './ModalPage';
 import './EditProfileModal.css';
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 const EditProfileModal = ({user, cancel}) => {
     const userState = useSelector(st => st.userState);

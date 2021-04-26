@@ -4,14 +4,10 @@ import PageTitle from './PageTitle';
 import List from './List';
 import ListCell from './ListCell';
 import CellSection from './CellSection';
-import { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { getDrinks } from '../actions/creators/drinkCreators';
-import Spinner from './Spinner';
+import { useSelector } from 'react-redux';
 import LogoImage from './LogoImage';
 
 const Drinks = () => {
-    const dispatch = useDispatch();
     const drinkState = useSelector(st => st.drinkState);
     const drinks = drinkState.drinks;
     return (

@@ -15,7 +15,7 @@ const OwnerDraughtList = ({id}) => {
             dispatch(getPlaceDraughts(id));
         }
         setLoading(loading => false);
-    }, []);
+    }, [dispatch, draughtList, id]);
 
     return (
         <List>

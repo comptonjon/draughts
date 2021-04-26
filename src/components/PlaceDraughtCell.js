@@ -15,7 +15,7 @@ const PlaceDraughtCell = ({id}) => {
             dispatch(getPlace(id));
         }
         setLoading(loading => false);
-    }, []);
+    }, [dispatch, id, place]);
     return (
         <ListCell>
             {

@@ -1,0 +1,23 @@
+.WelcomeMsg {
+    background-color: white;
+    border: 1px solid black;
+    padding: 12px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.WelcomeMsg h2 {
+    margin-bottom: 12px;
+}
+
+.WelcomeMsg p {
+    margin-bottom: 12px;
+}
+
+.WelcomeMsg button {
+    width: 100%;
+    max-width: 450px;
+    padding: 8px;
+}
+

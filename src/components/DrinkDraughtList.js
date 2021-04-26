@@ -17,7 +17,7 @@ const DrinkDraughtList = ({drink:id}) => {
             dispatch(getDrinkDraughts(id));
         }
         setLoading(loading => false)
-    }, []);
+    }, [dispatch, draughtList, id]);
     return (
         <List>
         {

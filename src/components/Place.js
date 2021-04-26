@@ -16,12 +16,21 @@ const Place = () => {
     const [loading, setLoading] = useState(true);
     const placeState = useSelector(st => st.placeState);
     const place = placeState.places[id];
+    const ratings = useSelector(st => st.placeRatingsState.ratings);
     useEffect(() => {
         if (!place) {
             dispatch(getPlace(id))
         };
         setLoading(loading => false);
-    }, [dispatch, id, place]);
+        if (ratings) {
+            ratings.forEach(r => {
+                if (r.place_id === +id) {
+                    console.log(r);
+                }
+            })
+        }
+        
+    }, [dispatch, id, place, ratings]);
     // if(loading || placeState.requests) {
     //     return <h1>LOADING.....</h1>
     // }
@@ -42,6 +51,7 @@ const Place = () => {
 
             <>
             <PageTitle title={`${place.name}`}/>
+
             <PlaceDraughtList place={id} />
             </>
         }

@@ -6,23 +6,47 @@ import { useEffect } from 'react';
 import { getDrinks } from './actions/creators/drinkCreators';
 import { getPlaces } from './actions/creators/placeCreators';
 import Spinner from './components/Spinner';
+import { getPlaceRatings, getAllDrinkRatings } from './actions/creators/ratingsCreators';
+import { getAllUsers } from './actions/creators/userCreators';
+import { getAllOwners } from './actions/creators/placeOwnersCreators';
 
 function App() {
   const dispatch = useDispatch();
-  const drinkInitialLoad = useSelector(st => st.drinkState.initialLoad);
-  const placeInitialLoad = useSelector(st => st.placeState.initialLoad);
+  const user = useSelector(st => st.sessionState.user);
+  const drinkState = useSelector(st => st.drinkState);
+  const placeState = useSelector(st => st.placeState);
+  const userState = useSelector(st => st.userState);
+  const placeRatingsState = useSelector(st => st.placeRatingsState);
+  const drinkRatingsState = useSelector(st => st.drinkRatingsState);
+  const ownerState = useSelector(st => st.ownerState);
   useEffect(() => {
-    if (!drinkInitialLoad) {
-      dispatch(getDrinks());
+    if (user) {
+      if (!drinkState.initialLoad && !drinkState.requests) {
+        dispatch(getDrinks());
+      }
+      if (!placeState.initialLoad && !placeState.requests) {
+        dispatch(getPlaces());
+      }
+      if (!userState.initialLoad && !userState.requests) {
+        dispatch(getAllUsers());
+      }
+      if (!placeRatingsState.initialLoad && !placeRatingsState.requests) {
+        dispatch(getPlaceRatings());
+      }
+      if (!drinkRatingsState.initialLoad && !drinkRatingsState.requests) {
+        dispatch(getAllDrinkRatings());
+      }
+      if (!ownerState.initialLoad && !ownerState.requests) {
+        dispatch(getAllOwners());
+      }
     }
-    if (!placeInitialLoad) {
-      dispatch(getPlaces());
-    }
-  }, [dispatch, drinkInitialLoad, placeInitialLoad])
+    
+  }, [dispatch, drinkState, placeState, userState, placeRatingsState, user])
+ 
   return (
     <div className="App">
       {
-        (drinkInitialLoad && placeInitialLoad)
+        (drinkState.initialLoad && placeState.initialLoad && userState.initialLoad && placeRatingsState.initialLoad && drinkRatingsState.initialLoad && ownerState.initialLoad)
         ?
         <>
           <Navbar />

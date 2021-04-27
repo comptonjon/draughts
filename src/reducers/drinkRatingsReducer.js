@@ -1,4 +1,5 @@
 import { DRINK_RATING_API_REQUEST, DRINK_RATING_INITIAL_LOAD_SUCCESS, DRINK_RATING_API_SUCCESS, DRINK_RATING_API_ERROR } from '../actions/types/drinkRatingTypes'
+import { RESET } from '../actions/types/globalTypes';
 
 const INITIAL_STATE = { initialLoad: false, requests: 0, error: null, ratings: {}};
 
@@ -24,6 +25,8 @@ const drinkRatingsReducer = (state=INITIAL_STATE, action) => {
         //         }};
         case DRINK_RATING_API_ERROR:
             return { ...state, requests: state.requests - 1, error: action.error };
+        case RESET:
+            return INITIAL_STATE;
         default: 
             return state;
     }

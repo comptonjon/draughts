@@ -1,4 +1,6 @@
 import { OWNERSHIP_API_REQUEST, OWNERSHIP_INITIAL_LOAD_SUCCESS, OWNERSHIP_API_SUCCESS, OWNERSHIP_API_ERROR } from '../actions/types/ownershipTypes'
+import { RESET } from '../actions/types/globalTypes';
+
 const INITIAL_STATE = { requests: 0, initialLoad: false, error: null, owners: []};
 const ownerReducer = (state=INITIAL_STATE, action) => {
     switch(action.type) {
@@ -8,6 +10,8 @@ const ownerReducer = (state=INITIAL_STATE, action) => {
             return { ...state, requests: state.requests - 1, owners: action.owners, initialLoad: true }
         case OWNERSHIP_API_ERROR:
             return { ...state, requests: state.requests - 1, error: action.error };
+        case RESET:
+            return INITIAL_STATE;
         default:
             return state;
     }

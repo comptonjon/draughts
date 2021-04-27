@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 const WelcomeMsg = () => {
     const history = useHistory();
     const toAuth = () => {
-        history.push('/drinks');
+        history.push('/auth');
     }
     return (
         <div className="WelcomeMsg">

@@ -1,5 +1,5 @@
 import { PLACE_RATING_API_REQUEST, PLACE_RATING_INITIAL_LOAD_SUCCESS, PLACE_RATING_API_SUCCESS, PLACE_RATING_ERROR } from '../actions/types/placeRatingTypes'
-import placeDraughtsReducer from "./placeDraughtsReducer";
+import { RESET } from '../actions/types/globalTypes';
 
 const INITIAL_STATE = { initialLoad: false, requests: 0, error: null, ratings: {}};
 
@@ -25,6 +25,8 @@ const placeRatingsReducer = (state=INITIAL_STATE, action) => {
         //         }};
         case PLACE_RATING_ERROR:
             return { ...state, requests: state.requests - 1, error: action.error };
+        case RESET:
+            return INITIAL_STATE;
         default: 
             return state;
     }

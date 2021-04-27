@@ -2,6 +2,7 @@ import { combineReducers } from 'redux';
 import placeReducer from './placeReducer';
 import drinkReducer from './drinkReducer'
 import draughtsReducer from './draughtsReducer'
+import draughtReducer from './draughtReducer';
 import sessionReducer from './sessionReducer';
 import userReducer from './userReducer';
 import placeRatingsReducer from './placeRatingsReducer';
@@ -13,6 +14,7 @@ const rootReducer = combineReducers(
         placeState: placeReducer, 
         drinkState: drinkReducer, 
         draughtsState: draughtsReducer,
+        draughtState: draughtReducer,
         sessionState: sessionReducer,
         userState: userReducer,
         placeRatingsState: placeRatingsReducer,

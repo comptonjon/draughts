@@ -1,4 +1,6 @@
 import { DRINK_API_ERROR, DRINK_API_SUCCESS, DRINK_API_REQUEST, DRINK_API_INITAL_LOAD_SUCCESS } from '../actions/types/drinkTypes';
+import { RESET } from '../actions/types/globalTypes';
+
 const INITIAL_STATE = { requests: 0, error: null, drinks: {}, initialLoad: false};
 
 const drinkReducer = (state=INITIAL_STATE, action) => {
@@ -11,6 +13,8 @@ const drinkReducer = (state=INITIAL_STATE, action) => {
             return { ...state, requests: state.requests - 1, drinks: { ...state.drinks, ...action.payload } };
         case DRINK_API_ERROR:
             return { ...state, requests: state.requests - 1, error: action.error }
+        case RESET:
+            return INITIAL_STATE;
         default: 
             return state;
     }

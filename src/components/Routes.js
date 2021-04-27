@@ -12,6 +12,8 @@ import Auth from './Auth';
 import Logout from './Logout';
 import AuthRoute from './AuthRoute';
 import Wrapper from './Wrapper';
+import NewPlace from './NewPlace';
+import NewDrink from './NewDrink';
 
 const Routes = () => {
     return (
@@ -19,18 +21,17 @@ const Routes = () => {
             <Route path="/auth">
                 <Auth />
             </Route>
-            <Wrapper>
             <Route exact path="/drinks">
                 <Drinks />
             </Route>
             <Route exact path="/drinks/:id">
-                <Drink />
+                <NewDrink />
             </Route>
             <Route exact path="/places">
                 <Places />
             </Route>
             <Route exact path="/places/:id">
-                <Place />
+                <NewPlace />
             </Route>
             <Route exact path="/places/:id/manage">
                 <ManagePlace />
@@ -46,9 +47,8 @@ const Routes = () => {
                     <Logout />
                 </AuthRoute>
             </Route>
-            </Wrapper>
             <Route exact path="/">
-                <Launch/>
+                <Launch />
             </Route>
             <Route>
                 <h1>404 NOT FOUND</h1>

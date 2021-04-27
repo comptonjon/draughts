@@ -2,7 +2,8 @@ import {
     DRAUGHT_API_REQUEST, 
     DRAUGHT_API_PLACE_SUCCESS, 
     DRAUGHT_API_DRINK_SUCCESS, 
-    DRAUGHT_API_ERROR 
+    DRAUGHT_API_ERROR, 
+    DRAUGHT_INITIAL_LOAD_SUCCESS 
 } from '../types/draughtTypes';
 
 import axios from 'axios';
@@ -13,6 +14,24 @@ import {
     PLACE_ENDPOINT, 
     DRAUGHTS_ENDPOINT 
 } from '../../constants';
+
+
+export const getAllDraughts = () => {
+    return async function(dispatch) {
+        try {
+            dispatch({type: DRAUGHT_API_REQUEST});
+            const res = await axios.get(`${WAT_API_URI}draught`);
+            dispatch(gotAllDraughts(res.data.draughts));
+        } catch (e) {
+            dispatch({ type: DRAUGHT_API_ERROR, error: "ERROR FETCHING DRAUGHTS"})
+        }
+    }
+}
+
+function gotAllDraughts(draughts) {
+    console.log("DRAUGHTS", draughts)
+    return { type: DRAUGHT_INITIAL_LOAD_SUCCESS, draughts }
+}
 
 
 export const getPlaceDraughts = (id) => {
